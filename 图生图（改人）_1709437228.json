@@ -1,0 +1,1105 @@
+{
+  "last_node_id": 100,
+  "last_link_id": 148,
+  "nodes": [
+    {
+      "id": 9,
+      "type": "PreviewImage",
+      "pos": [
+        2082,
+        432
+      ],
+      "size": {
+        "0": 404.3339538574219,
+        "1": 597.6337890625
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8,
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 88,
+      "type": "PresetText|pysssss",
+      "pos": [
+        999,
+        1157
+      ],
+      "size": {
+        "0": 297.9277648925781,
+        "1": 108.22339630126953
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            133
+          ],
+          "slot_index": 0,
+          "label": "文本"
+        }
+      ],
+      "properties": {
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "反向万能通用",
+        "Manage"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 8,
+      "type": "VAEEncode",
+      "pos": [
+        1391,
+        444
+      ],
+      "size": {
+        "0": 169.9273223876953,
+        "1": 46
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 5,
+          "label": "图像"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 6,
+          "label": "VAE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            9
+          ],
+          "shape": 3,
+          "label": "Latent",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 93,
+      "type": "ttN hiresfixScale",
+      "pos": [
+        2508,
+        439
+      ],
+      "size": {
+        "0": 315,
+        "1": 342
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 138,
+          "label": "图像"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 139,
+          "label": "VAE",
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "Latent"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            140
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ttN hiresfixScale",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        },
+        "ttNnodeVersion": "1.0.3"
+      },
+      "widgets_values": [
+        "RealESRGAN_x4plus_anime_6B.pth",
+        true,
+        "nearest-exact",
+        "by percentage",
+        50,
+        1024,
+        1024,
+        1024,
+        "disabled",
+        "Hide",
+        "ComfyUI",
+        true
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 94,
+      "type": "PreviewImage",
+      "pos": [
+        2841,
+        440
+      ],
+      "size": {
+        "0": 397.9255065917969,
+        "1": 562.374755859375
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 140,
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 89,
+      "type": "StringFunction|pysssss",
+      "pos": [
+        1000,
+        760
+      ],
+      "size": {
+        "0": 294.64520263671875,
+        "1": 354.6822509765625
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 128,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "文本_A"
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "文本_B"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            132
+          ],
+          "shape": 3,
+          "label": "字符串",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringFunction|pysssss",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "append",
+        "yes",
+        "(((masterpiece))),(((best quality))),((ultra-detailed)), soft outlines, magnificent, ethereal, painterly, epic, fantasy art, dreamy",
+        "",
+        "1girl, solo, long_hair, breasts, simple_background, dress, holding, jewelry, standing, full_body, weapon, white_hair, horns, bracelet, blue_dress, staff, black_background",
+        "(((masterpiece))),(((best quality))),((ultra-detailed)), soft outlines, magnificent, ethereal, painterly, epic, fantasy art, dreamy, 1girl, solo, long_hair, breasts, simple_background, dress, holding, jewelry, standing, full_body, weapon, white_hair, horns, bracelet, blue_dress, staff, black_background"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 2,
+      "type": "ttN pipeKSampler",
+      "pos": [
+        1740,
+        430
+      ],
+      "size": {
+        "0": 318.4412841796875,
+        "1": 810
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 1,
+          "label": "节点束"
+        },
+        {
+          "name": "optional_model",
+          "type": "MODEL",
+          "link": null,
+          "label": "模型"
+        },
+        {
+          "name": "optional_positive",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "正面条件"
+        },
+        {
+          "name": "optional_negative",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "负面条件"
+        },
+        {
+          "name": "optional_latent",
+          "type": "LATENT",
+          "link": 9,
+          "label": "Latent"
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": null,
+          "label": "VAE"
+        },
+        {
+          "name": "optional_clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "CLIP"
+        },
+        {
+          "name": "xyPlot",
+          "type": "XYPLOT",
+          "link": null,
+          "label": "XY图表"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "模型"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "正面条件"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "负面条件"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "Latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            139
+          ],
+          "shape": 3,
+          "label": "VAE",
+          "slot_index": 5
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3,
+          "label": "CLIP",
+          "slot_index": 6
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            8,
+            138
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 7
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "随机种",
+          "slot_index": 8
+        },
+        {
+          "name": "spent_time",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "spent_time"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ttN pipeKSampler",
+        "ttNnodeVersion": "1.0.5",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "None",
+        1,
+        1,
+        "None",
+        2,
+        "disabled",
+        "Sample",
+        30,
+        8,
+        "euler_ancestral",
+        "karras",
+        0.4,
+        "Preview",
+        1,
+        0,
+        342999569760497
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 86,
+      "type": "PresetText|pysssss",
+      "pos": [
+        643,
+        779
+      ],
+      "size": {
+        "0": 320.65081787109375,
+        "1": 121.48918914794922
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            128
+          ],
+          "slot_index": 0,
+          "label": "文本"
+        }
+      ],
+      "properties": {
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "正面质量通用",
+        "Manage"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 1,
+      "type": "ttN pipeLoader",
+      "pos": [
+        1390,
+        540
+      ],
+      "size": {
+        "0": 312.9093017578125,
+        "1": 702
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_override",
+          "type": "MODEL",
+          "link": null,
+          "label": "覆盖模型"
+        },
+        {
+          "name": "clip_override",
+          "type": "CLIP",
+          "link": null,
+          "label": "覆盖CLIP"
+        },
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "LoRA堆"
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 132,
+          "widget": {
+            "name": "positive"
+          },
+          "slot_index": 3,
+          "label": "正面提示词"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 133,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "负面提示词"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "label": "节点束",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "模型"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "正面条件"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "负面条件"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "Latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "label": "VAE",
+          "slot_index": 5
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3,
+          "label": "CLIP"
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "随机种"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ttN pipeLoader",
+        "ttNnodeVersion": "1.1.2",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "常用\\revAnimated_v122EOL.safetensors",
+        "Default",
+        "vae-ft-mse-840000-ema-pruned.ckpt",
+        -2,
+        "None",
+        0.85,
+        1,
+        "None",
+        1,
+        1,
+        "None",
+        1,
+        1,
+        "Positive",
+        "none",
+        "A1111",
+        "lowres,bad anatomy,bad hand,paintings,sketches,(worst quality:2),(low quality:2),(normal quality:2),lowres,((monochrome)),((grayscale)),skin spots,acnes,skin blemishes,age spot,glans,extra fingers,fewer fingers,((watermark:2)),(white letters:1),(multi nipples),bad anatomy,bad hands,text,error,missing fingers,missing arms,missing legs,extra digit,fewer digits,cropped,worst quality,jpeg artifacts,signature,watermark,username,bad feet,{Multiple people},blurry,poorly drawn hands,poorly drawn face,mutation,deformed,extra limbs,extra arms,extra legs,malformed limbs,fused fingers,too many fingers,long neck,cross-eyed,mutated hands,polar lowres,bad body,bad proportions,gross proportions,wrong feet bottom render,abdominal stretch,briefs,knickers,kecks,thong,{{fused fingers}},{{bad body}},bad proportion body to legs,wrong toes,extra toes,missing toes,weird toes,2 body,2 pussy,2 upper,2 lower,2 head,3 hand,3 feet,extra long leg,super long leg,mirrored image,mirrored noise",
+        "none",
+        "A1111",
+        512,
+        512,
+        1,
+        0,
+        "fixed"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 98,
+      "type": "Gemini_API_S_Zho",
+      "pos": [
+        -258,
+        423
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 146,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            147
+          ],
+          "shape": 3,
+          "label": "text",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Gemini_API_S_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "用关键词描述描述这张画，20个字以内，并用“，\"并排隔开",
+        "gemini-pro",
+        false
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 99,
+      "type": "DisplayText_Zho",
+      "pos": [
+        -274,
+        681
+      ],
+      "size": {
+        "0": 415.0017395019531,
+        "1": 368.81427001953125
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 147,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DisplayText_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "",
+        "湖泊, 树木, 小船, 日落, 山脉"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 95,
+      "type": "QWenVL_API_S_Multi_Zho",
+      "pos": [
+        169,
+        420
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 141,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            148
+          ],
+          "shape": 3,
+          "label": "text",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QWenVL_API_S_Multi_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "用关键词描述描述这张画，20个字以内，并用“，\"并排隔开",
+        "qwen-vl-plus",
+        417703454163074,
+        "randomize"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 100,
+      "type": "DisplayText_Zho",
+      "pos": [
+        168,
+        692
+      ],
+      "size": [
+        439.0250023776655,
+        440.5439051847743
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 148,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DisplayText_Zho",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "",
+        ""
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 7,
+      "type": "LoadImage",
+      "pos": [
+        625,
+        406
+      ],
+      "size": {
+        "0": 327.7034606933594,
+        "1": 314
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5,
+            15,
+            141,
+            146
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "遮罩"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "img_v3_028j_82f17472-90e6-4154-84ba-fe63208a02bg.jpg",
+        "image"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 14,
+      "type": "WD14Tagger|pysssss",
+      "pos": [
+        1000,
+        401
+      ],
+      "size": {
+        "0": 310,
+        "1": 280
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 15,
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 6,
+          "label": "字符串",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WD14Tagger|pysssss",
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "wd-v1-4-moat-tagger-v2",
+        0.35,
+        0.85,
+        ""
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      5,
+      7,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      6,
+      1,
+      5,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      8,
+      2,
+      7,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      8,
+      0,
+      2,
+      4,
+      "LATENT"
+    ],
+    [
+      15,
+      7,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      128,
+      86,
+      0,
+      89,
+      0,
+      "STRING"
+    ],
+    [
+      132,
+      89,
+      0,
+      1,
+      3,
+      "STRING"
+    ],
+    [
+      133,
+      88,
+      0,
+      1,
+      4,
+      "STRING"
+    ],
+    [
+      138,
+      2,
+      7,
+      93,
+      0,
+      "IMAGE"
+    ],
+    [
+      139,
+      2,
+      5,
+      93,
+      1,
+      "VAE"
+    ],
+    [
+      140,
+      93,
+      1,
+      94,
+      0,
+      "IMAGE"
+    ],
+    [
+      141,
+      7,
+      0,
+      95,
+      0,
+      "IMAGE"
+    ],
+    [
+      146,
+      7,
+      0,
+      98,
+      0,
+      "IMAGE"
+    ],
+    [
+      147,
+      98,
+      0,
+      99,
+      0,
+      "STRING"
+    ],
+    [
+      148,
+      95,
+      0,
+      100,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
